@@ -1,0 +1,324 @@
+/* @keyframes moveAndGrow {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(50px) translateY(50px) scale(2);
+  }
+  100% {
+    transform: translateX(100px) translateY(100px) scale(4);
+  }
+} */
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+}
+header {
+  background-color: #ffa500;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.creator-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* animation-name: moveAndGrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; */
+  animation: rotate360 4s linear infinite;
+}
+
+.home-tap {
+  text-decoration: none;
+}
+
+.company-name a h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #000000;
+}
+
+.contact-us {
+  font-size: 16px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+audio {
+  display: none;
+}
+
+main {
+  padding: 40px;
+  /* background-color: #000000; */
+  color: #ffffff;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffa500;
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+video-item {
+  max-width: 100%;
+  height: auto;
+}
+
+creator-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value as needed */
+}
+
+.service-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.service-button {
+  background-color: #ffa500;
+  color: #000000;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.slogan {
+  font-size: 24px;
+  color: #ff4500; /* Orange Red */
+  text-align: center;
+}
+
+.benefits-section {
+  margin-top: 40px;
+}
+
+.benefits-section h2 {
+  color: #ff4500; /* Orange Red */
+}
+
+.service-info {
+  margin-top: 40px;
+}
+
+.service-info h2 {
+  color: #ff4500; /* Orange Red */
+}
+
+.service-info ul {
+  list-style-type: disc;
+}
+
+/* life-olanning */
+/* .life-cycle-image {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+.life-cycle-image img {
+  max-width: 100%;
+  border-radius: 8px;
+} */
+.services {
+  margin-top: 40px;
+  text-align: center;
+}
+.services ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.services li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.contact-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.contact-button a {
+  background-color: #ffa500;
+  color: #000000;
+  font-size: 24px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* risk-level */
+form {
+  margin-bottom: 20px;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 20px; */
+  margin-top: 4px;
+}
+
+button {
+  background-color: #f15a24;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #d1480f;
+}
+
+.contact-button {
+  background-color: #f15a24;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.contact-button:hover {
+  background-color: #d1480f;
+}
+
+p.result {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* investment-service */
+/* #news-window {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  background-color: #ffffff;
+  float: right;
+  margin-left: 20px; 
+} */
+
+/* .slogan {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}  */
+
+/* .contact-button {
+  display: block;
+  width: 250px;
+  height: 80px; 
+   margin: 50px auto;
+  background-color: #ff4500;
+  color: #ffffff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 40px;
+} */
+
+/* saving-service */
+.benefits-section {
+  margin-top: 40px;
+}
+
+.benefits-section h2 {
+  color: #ff4500; /* Orange Red */
+}
+
+.service-info {
+  margin-top: 40px;
+}
+
+.service-info h2 {
+  color: #ff4500; /* Orange Red */
+}
+
+.service-info ul {
+  list-style-type: disc;
+}
+/* health-protection */
+.sector {
+  margin-top: 40px;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
