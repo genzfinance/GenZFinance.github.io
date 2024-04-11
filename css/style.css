@@ -1,20 +1,31 @@
-/* @keyframes moveAndGrow {
-  0% {
-    transform: translateX(0) translateY(0) scale(1);
-  }
-  50% {
-    transform: translateX(50px) translateY(50px) scale(2);
-  }
-  100% {
-    transform: translateX(100px) translateY(100px) scale(4);
-  }
-} */
-@keyframes rotate360 {
+/* @keyframes rotate360 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+} */
+
+@media (max-width: 768px) {
+  .creator-info {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .creator-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    max-width: fit-content;
+  }
+  .photo-right {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -22,9 +33,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: #000000e8;
   color: #ffffff;
 }
+
 header {
   background-color: #ffa500;
   color: #000000;
@@ -32,6 +44,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.about-creator {
+  /* width: 100%; */
+  /* background-color: darkkhaki; */
+  margin: 10px;
+  /* background-color: #f7b232; */
 }
 
 #myVideo {
@@ -44,16 +63,36 @@ header {
   z-index: -1;
 }
 
+.creator-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.photo-right {
+  display: flex;
+  flex-direction: row-reverse;
+  /* flex-direction: row; */
+}
+
 .creator-photo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px;
   /* animation-name: moveAndGrow;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out; */
-  animation: rotate360 4s linear infinite;
+  /* animation: rotate360 4s linear infinite; */
+}
+
+.creator-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .home-tap {
@@ -129,6 +168,7 @@ creator-photo {
   text-decoration: none;
   border-radius: 4px;
 }
+
 .slogan {
   font-size: 24px;
   color: #ff4500; /* Orange Red */
@@ -196,6 +236,11 @@ creator-photo {
 }
 
 /* risk-level */
+#risk-test {
+  width: 65%;
+  margin: auto;
+}
+
 form {
   margin-bottom: 20px;
 }
@@ -208,6 +253,10 @@ ol {
 li {
   margin-bottom: 10px;
 }
+
+/* ol li p {
+  text-align: left;
+} */
 
 .response {
   display: flex;
@@ -313,7 +362,7 @@ p.result {
 }
 
 footer {
-  background-color: #000000;
+  /* background-color: #000000e8; */
   color: #ffffff;
   padding: 20px;
   text-align: center;
