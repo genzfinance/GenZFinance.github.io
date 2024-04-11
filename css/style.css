@@ -27,6 +27,9 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+  .company-name h1 {
+    display: none;
+  }
 }
 
 body {
@@ -63,6 +66,24 @@ header {
   z-index: -1;
 }
 
+.company-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-tap {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo {
+  width: 60px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
 .creator-info {
   display: flex;
   flex-direction: row;
@@ -72,6 +93,20 @@ header {
   display: flex;
   flex-direction: row-reverse;
   /* flex-direction: row; */
+}
+
+.company-name a h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #000000;
+}
+
+.creator-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .creator-photo {
@@ -85,24 +120,6 @@ header {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out; */
   /* animation: rotate360 4s linear infinite; */
-}
-
-.creator-description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.home-tap {
-  text-decoration: none;
-}
-
-.company-name a h1 {
-  margin: 0;
-  font-size: 28px;
-  color: #000000;
 }
 
 .contact-us {
@@ -359,6 +376,11 @@ p.result {
 /* health-protection */
 .sector {
   margin-top: 40px;
+}
+
+/* contact */
+contact-info {
+  height: 100vw;
 }
 
 footer {
