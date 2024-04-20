@@ -1,110 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>GenZ Finance</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Education with GenZ Finance</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #ffa500;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .company-name {
+            display: flex;
+            align-items: center;
+        }
+
+        header .company-name img {
+            width: 60px; /* Adjust the width of the image */
+            margin-right: 10px; /* Add some spacing between the image and text */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        main {
+            padding-top: 80px; /* Adjust for fixed header */
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        section.show {
+            opacity: 1;
+        }
+
+        /* Scroll button */
+        .scroll-down {
+            margin-top: 40px;
+        }
+
+        .scroll-button {
+            color: white;
+            background-color: #ffa500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Get Started button */
+        .get-started-button {
+            color: white;
+            background-color: #ffa500;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: block;
+            margin: 20px auto; /* Center the button */
+            width: 100px; /* Prevent stretching */
+        }
+
+        /* Particle background */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Mouse follower effect */
+        #mouse-follower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffa500;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
     <header>
-      <div class="company-name">
-        <a class="home-tap" href="/">
-          <img
-            class="header-logo"
-            src="/image/c75a81bb-7e99-400d-8388-ad5b9093ac3f.JPG"
-            alt="c75a81bb-7e99-400d-8388-ad5b9093ac3f-removebg-preview.png"
-          />
-          <!-- <h1 class="brand-name">GenZ Finance</h1> -->
-          <p class="brand-name">GenZ Finance</p>
-        </a>
-      </div>
-      <div>
-        <a href="contact.html" class="contact-us">Contact Us</a>
-      </div>
+        <div class="company-name">
+            <a class="home-tap" href="/about.html">
+                <img
+                    class="header-logo"
+                    src="/image/c75a81bb-7e99-400d-8388-ad5b9093ac3f.JPG"
+                    alt="c75a81bb-7e99-400d-8388-ad5b9093ac3f-removebg-preview.png"
+                />
+            </a>
+        </div>
+        <h1>GenZ Finance - Est. 2024</h1>
+        <p></p>
     </header>
 
     <main>
-      <!-- music w/ video -->
-      <section class="about-company">
-        <!-- <video autoplay loop id="myVideo">
-          <source src="/image/silas gif.mp4" type="audio/ogg" />
-        </video> -->
-        <!-- <audio autoplay loop>
-          <source src="/image/失戀太少.mp4" type="audio/ogg" />
-          <source src="/image/VIDEO-2024-04-09-23-29-26.mp4" type="audio/ogg" />
-        </audio> -->
+      <p>Please Scroll Down</p>
 
-        <div class="company-description">
-          <h2>Aim of Our Team</h2>
-          <!-- Modified -->
-          <p>
-            At GenZ Finance, our aim is to empower and educate the younger
-            generation about personal finance. We understand the unique
-            financial challenges faced by young individuals and strive to
-            provide accessible and tailored financial services to help you
-            achieve your goals.
-          </p>
-        </div>
-      </section>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <section id="money-education">
+            <h2 style="text-align: center;">How Well Do You Know Your Money?</h2>
+            <p>Insert engaging content about money education here...</p>
+        </section>
 
-      <section class="about-creator">
-        <h2>About the Founder</h2>
-        <div class="creator-info">
-          <div class="creator-photo">
-            <img
-              src="/image/79062100-9eb8-4fed-bd1d-7fccf062d631.JPG"
-              alt="Silas"
-              width="250"
-            />
-            <!-- <video src="/image/Silas_animation.mp4"></video> -->
-          </div>
-          <div class="creator-description">
-            <p>
-              Silas, the founder of GenZ Finance, brings over three years of
-              experience as a financial consultant and team leader in the
-              insurance industry. With a proven track record, including
-              three-time qualification for the prestigious MDRT (Million Dollar
-              Round Table), Silas is dedicated to helping young individuals make
-              informed financial decisions.
-            </p>
-            <p>
-              Having recognized the need for accessible financial services
-              tailored to the younger generation, Silas decided to go freelance
-              and establish GenZ Finance - a comprehensive platform designed to
-              assist and educate individuals like you in achieving your
-              financial goals.
-            </p>
-            <!-- Modified -->
-          </div>
-        </div>
-      </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-      <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-buttons">
-          <a href="life-planning.html" class="service-button">Life Planning</a>
-          <a href="risk-level.html" class="service-button"
-            >Knowing Your Risk Level</a
-          >
-          <a href="investment-service.html" class="service-button"
-            >Investment Service</a
-          >
-          <a href="saving-service.html" class="service-button"
-            >Saving Service</a
-          >
-          <a href="health-protection.html" class="service-button"
-            >Health Protection</a
-          >
-          <a href="tax-reduction-service.html" class="service-button"
-            >Tax Deduction Service</a
-          >
-          <a href="mpf-service.html" class="service-button">MPF Service</a>
-        </div>
-      </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section id="introduction">
+            <h2 style="text-align: center;">Introducing GenZ Finance</h2>
+            <p>More engaging content introducing GenZ Finance...</p>
+        </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section id="introduction">
+          <h2 style="text-align: center;">Our Objectives</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Provide unbiased financial advice 💡</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Assist you in financial and life planning ⚡</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Analyze markets and sectors 📈</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Guide you in MPF and Tax deduction ⚔️</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Filter thhe best products in the market 💎</h2>
+        </section>
+        <br>
+        <br>
+        <section id="introduction">
+          <h2 style="text-align: center;">Handle clerical and admin procedures 🛡️</h2>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section id="get-started">
+            <h2 style="text-align: center;">Ready to Take Control of Your Finances?</h2>
+            <p style="text-align: center;">Click below to get started with GenZ Finance!</p>
+            <a href="/about.html" class="get-started-button">Get Started</a>
+        </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 GenZ Finance. All rights reserved.</p>
-    </footer>
-  </body>
+    <canvas id="particle-canvas"></canvas>
+    <div id="mouse-follower"></div>
+
+    <script>
+        // Particle background
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        function initCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = -5; // Start particles from top
+                this.size = Math.random() * 2 + 1; // Smaller particles
+                this.speedX = 0; // Only come from one direction
+                this.speedY = Math.random() * 2 + 1; // Downward speed
+            }
+
+            draw() {
+                ctx.fillStyle = '#ffa500';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.y - this.size > canvas.height) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = -5;
+                }
+
+                this.draw();
+            }
+        }
+
+        // Initialize particles
+        function initParticles() {
+            particlesArray = [];
+            const numberOfParticles = 500; // Adjust for desired particle density
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+
+            followMouse();
+        }
+
+        // Mouse follower effect
+        const mouseFollower = document.getElementById('mouse-follower');
+
+        function followMouse() {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            mouseFollower.style.left = x + 'px';
+            mouseFollower.style.top = y + 'px';
+        }
+
+        // Scroll animation
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('show');
+                } else {
+                    section.classList.remove('show');
+                }
+            });
+        });
+
+        // Initialize
+        initCanvasSize();
+        initParticles();
+        animate();
+    </script>
+</body>
 </html>
