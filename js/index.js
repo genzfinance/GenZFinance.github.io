@@ -30,3 +30,23 @@ function calculateRiskLevel() {
 
   document.getElementById("resultText").textContent = resultText;
 }
+
+
+// Koen's edit
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Init ScrollMagic controller
+  var controller = new ScrollMagic.Controller();
+
+  // Create a scene for intro section
+  var introScene = new ScrollMagic.Scene({
+      triggerElement: "#intro",
+      triggerHook: 0.7, // Adjust this value based on when you want the animation to start
+      reverse: false
+  })
+  .setClassToggle("#intro", "fade-in")
+  .addTo(controller);
+
+  // Add more scenes for other sections as needed
+});
+
