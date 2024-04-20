@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GenZ Finance</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* animations for here only */
+        .bg {
+            animation: slide 15s ease-in-out infinite alternate;
+            background-image: linear-gradient(-20deg, #303030 50%, #000 50%);
+            bottom: 0;
+            left: -100%;
+            opacity: 0.5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 15s;
+        }
+
+        .bg3 {
+            animation-duration: 20s;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        section {
+            opacity: 0;
+            transition: opacity 3s; 
+        }
+
+        .visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="company-name">
+            <a class="home-tap" href="/about.html">
+                <img class="header-logo" src="/image/c75a81bb-7e99-400d-8388-ad5b9093ac3f.JPG" alt="c75a81bb-7e99-400d-8388-ad5b9093ac3f-removebg-preview.png" />
+                <p class="brand-name">GenZ Finance</p>
+            </a>
+        </div>
+        <div>
+            <a href="contact.html" class="contact-us">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-company">
+            <div class="company-description">
+                <h2>Aim of Our Team</h2>
+                <p>
+                    At GenZ Finance, our aim is to empower and educate the younger
+                    generation about personal finance. We understand the unique
+                    financial challenges faced by young individuals and strive to
+                    provide accessible and tailored financial services to help you
+                    achieve your goals.
+                </p>
+            </div>
+        </section>
+
+        <section class="about-creator">
+            <h2>About the Founder</h2>
+            <div class="creator-info">
+                <div class="creator-photo">
+                    <img src="/image/79062100-9eb8-4fed-bd1d-7fccf062d631.JPG" alt="Silas" width="250" />
+                </div>
+                <div class="creator-description">
+                    <p>
+                        Silas, the founder of GenZ Finance, brings over three years of
+                        experience as a financial consultant and team leader in the
+                        insurance industry. With a proven track record, including
+                        three-time qualification for the prestigious MDRT (Million Dollar
+                        Round Table), Silas is dedicated to helping young individuals make
+                        informed financial decisions.
+                    </p>
+                    <p>
+                        Having recognized the need for accessible financial services
+                        tailored to the younger generation, Silas decided to go freelance
+                        and establish GenZ Finance - a comprehensive platform designed to
+                        assist and educate individuals like you in achieving your
+                        financial goals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-buttons">
+                <a href="life-planning.html" class="service-button">Life Planning</a>
+                <a href="risk-level.html" class="service-button">Knowing Your Risk Level</a>
+                <a href="investment-service.html" class="service-button">Investment Service</a>
+                <a href="saving-service.html" class="service-button">Saving Service</a>
+                <a href="health-protection.html" class="service-button">Health Protection</a>
+                <a href="tax-reduction-service.html" class="service-button">Tax Deduction Service</a>
+                <a href="mpf-service.html" class="service-button">MPF Service</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GenZ Finance. All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let controller = new ScrollMagic.Controller();
+
+        let sections = document.querySelectorAll("section");
+
+        sections.forEach((section) => {
+            new ScrollMagic.Scene({
+                triggerElement: section,
+                triggerHook: 0.8,
+                reverse: false
+            })
+            .setClassToggle(section, 'visible')
+            .addTo(controller);
+        });
+    });
+</script>
+</html>
 
