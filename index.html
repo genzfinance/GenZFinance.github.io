@@ -93,6 +93,7 @@ feel free to contact me via koenc.coding@gmail.com if you don't have my phone nu
             width: 100%;
             height: 100%;
             z-index: -1;
+            opacity: 0.5
         }
 
         /* Mouse follower effect */
@@ -106,9 +107,23 @@ feel free to contact me via koenc.coding@gmail.com if you don't have my phone nu
             z-index: 9999;
             transition: all 0.3s ease;
         }
+
+        /* Toggle button */
+        .toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ffa500;
+            color: #ffffff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <canvas id="cvs"></canvas>
     <header>
         <div class="company-name">
             <a class="home-tap" href="/about.html">
@@ -230,102 +245,124 @@ feel free to contact me via koenc.coding@gmail.com if you don't have my phone nu
     </main>
 
     <canvas id="particle-canvas"></canvas>
+    <canvas id="cvs"></canvas>
     <div id="mouse-follower"></div>
+    <button id="toggle-particles-button" class="toggle-button">Toggle Particles</button>
 
+
+
+
+    <script src="js/particles.js"></script>
     <script>
-        // Particle background
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particlesArray;
-
-        function initCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        // Particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = -5; // Start particles from top
-                this.size = Math.random() * 2 + 1; // Smaller particles
-                this.speedX = 0; // Only come from one direction
-                this.speedY = Math.random() * 2 + 1; // Downward speed
-            }
-
-            draw() {
-                ctx.fillStyle = '#ffa500';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.y - this.size > canvas.height) {
-                    this.x = Math.random() * canvas.width;
-                    this.y = -5;
-                }
-
-                this.draw();
-            }
-        }
-
-        // Initialize particles
-        function initParticles() {
-            particlesArray = [];
-            const numberOfParticles = 500; // Adjust for desired particle density
-
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-            }
-
-            followMouse();
-        }
-
-        // Mouse follower effect
-        const mouseFollower = document.getElementById('mouse-follower');
-
-        function followMouse() {
-            const x = event.clientX;
-            const y = event.clientY;
-
-            mouseFollower.style.left = x + 'px';
-            mouseFollower.style.top = y + 'px';
-        }
-
-        // Scroll animation
-        const sections = document.querySelectorAll('section');
-
-        window.addEventListener('scroll', () => {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (sectionTop < windowHeight * 0.75) {
-                    section.classList.add('show');
-                } else {
-                    section.classList.remove('show');
-                }
-            });
+      // Particle background
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particlesArray;
+    
+      function initCanvasSize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      }
+    
+      // class Particle {
+      //     constructor() {
+      //         this.x = Math.random() * canvas.width;
+      //         this.y = -5; // downwards
+      //         this.size = Math.random() * 2 + 1; 
+      //         this.speedX = 0;
+      //         this.speedY = Math.random() * 2 + 1;
+      //     }
+    
+      //     draw() {
+      //         ctx.fillStyle = '#ffa500';
+      //         ctx.beginPath();
+      //         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      //         ctx.fill();
+      //     }
+    
+      //     update() {
+      //         this.x += this.speedX;
+      //         this.y += this.speedY;
+    
+      //         if (this.y - this.size > canvas.height) {
+      //             this.x = Math.random() * canvas.width;
+      //             this.y = -5;
+      //         }
+    
+      //         this.draw();
+      //     }
+      // }
+    
+      // function initParticles() {
+      //     particlesArray = [];
+      //     const numberOfParticles = 500; // Adjust for desired particle density
+    
+      //     for (let i = 0; i < numberOfParticles; i++) {
+      //         particlesArray.push(new Particle());
+      //     }
+      // }
+    
+      function animate(event) {
+          requestAnimationFrame(() => animate(event));
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+          for (let i = 0; i < particlesArray.length; i++) {
+              particlesArray[i].update();
+          }
+    
+          followMouse(event);
+      }
+    
+      // Mouse follower effect
+      const mouseFollower = document.getElementById('mouse-follower');
+    
+      function followMouse(event) {
+          const rect = canvas.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+    
+          mouseFollower.style.left = x + 'px';
+          mouseFollower.style.top = y + 'px';
+      }
+    
+      canvas.addEventListener('mousemove', followMouse);
+    
+      // Toggle particles button
+      const toggleParticlesButton = document.getElementById('toggle-particles-button');
+    
+      toggleParticlesButton.addEventListener('click', () => {
+          if (canvas.visibility === 'hidden') {
+              canvas.visibility = 'visible';
+          } else {
+              canvas.visibility = 'hidden';
+          }
         });
-
-        // Initialize
-        initCanvasSize();
-        initParticles();
-        animate();
+    
+      const sections = document.querySelectorAll('section');
+    
+      window.addEventListener('scroll', () => {
+          sections.forEach(section => {
+              const sectionTop = section.getBoundingClientRect().top;
+              const windowHeight = window.innerHeight;
+    
+              if (sectionTop < windowHeight * 0.75) {
+                  section.classList.add('show');
+              } else {
+                  section.classList.remove('show');
+              }
+          });
+      });
+    
+      // // Initialize
+      // initCanvasSize();
+      // initParticles();
+      // animate();
+    
     </script>
+    
+    
+    
+
+  
 </body>
 </html>
