@@ -49,7 +49,7 @@
           this.width = this.canvas.width;
           this.height = this.canvas.height;
           this.particles = [];
-          this.numberOfParticles = 35; // Reduce number of particles for less visibility
+          this.numberOfParticles = 50; // Reduce number of particles for less visibility
           this.createParticles();
       }
       createParticles() {
